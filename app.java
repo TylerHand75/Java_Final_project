@@ -1,17 +1,28 @@
-import java.text.DecimalFormat;
-import java.util.InputMismatchException;
 import java.util.Scanner;
-
-
 public class app {
-    public static void main(String[] args) {
-        
-
-        for(int i = 2; i <= 10; i+=2){
-            System.out.println(i);
-
+    public static void main(String[] args) throws Exception {
+        Scanner scanner = new Scanner(System.in);
+        int choice = 0;        
+        while (true) {
+            String menuTitle = "Main Menu";
+            String prompt = "Select an chapter";
+            String[] menuOptions = {
+                "Chapter 1"
+            };
+            choice = UIUtility.showMenuOptions(menuTitle, prompt, menuOptions, scanner);
+            if (choice == 0)
+                continue;
+            if (choice == menuOptions.length + 1)
+                break;
+            switch (choice) {
+                case 1:
+                    new Chapter1().handleTask(scanner);
+                    break;
+            }
+            UIUtility.pressEnterToContinue(scanner);
         }
-
-    }
-
+       System.out.println("\nProgram complete. Goodbye.\n");
+       scanner.close();
+       
+    }   
 }
