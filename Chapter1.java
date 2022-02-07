@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import javax.sql.rowset.spi.SyncResolver;
+
 public class Chapter1 implements TaskHandler {
     @Override
     public void handleTask(Scanner in) {
@@ -36,7 +38,7 @@ public class Chapter1 implements TaskHandler {
 
     public void exercise1(Scanner in) {
         UIUtility.showMenuTitle("Exercise 1");
-        // Your code 
+        // Your
     }
 
     public void exercise2(Scanner in) {
@@ -54,7 +56,7 @@ public class Chapter1 implements TaskHandler {
         String name = InputUtility.getString("What is your name?", in);
         System.out.printf("%n Hello %s!", name);
 
-        int favNum = InputUtility.getInt("What is your favorite number?", in);
+        int favNum = InputUtility.getInt("What is your favorite number?",  in);
         System.out.printf("%n Your favorite number is %d.", favNum);
 
         int age = InputUtility.getIntInRange("How old are you (in years)? ", 0, 100, in);
@@ -62,6 +64,9 @@ public class Chapter1 implements TaskHandler {
 
         double temperature = InputUtility.getDouble("What is body temperature (in fahrenheit)? ", in);
         System.out.printf("%n You have a body temperature of %.1f\u00B0 fahrenheit.", temperature);
+
+        double rainfall = InputUtility.getDouble("%n How much did it rain yesterday?", in);
+        System.out.printf("%n It rained %0.1f inches Yesterday.", rainfall);
 
         String likesPizza = InputUtility.validateUserString(" Do you like pizza? \n",
                 new String[] { "Yes", "No" }, in);
