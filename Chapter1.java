@@ -3,7 +3,6 @@ import java.util.Scanner;
 import javax.sql.rowset.spi.SyncResolver;
 
 public class Chapter1 implements TaskHandler {
-    private Scanner sc;
 
     @Override
     public void handleTask(Scanner in) {
