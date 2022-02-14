@@ -41,8 +41,9 @@ public class Chapter1 implements TaskHandler {
         UIUtility.showMenuTitle("Get Largest Number");
         double userNum = InputUtility.getDouble("Enter a Number", in);
         double userNum2 = InputUtility.getDouble("Enter another Number", in);
-        if (userNum >= userNum2) 
+        if (userNum >= userNum2){ 
         System.out.println("Largest Number" +  userNum );
+        }
         else if (userNum<=userNum2){
             System.out.println("Largest Number " +  userNum2 );
         }
