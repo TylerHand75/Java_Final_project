@@ -3,6 +3,8 @@ import java.util.Scanner;
 import javax.sql.rowset.spi.SyncResolver;
 
 public class Chapter1 implements TaskHandler {
+    private Scanner sc;
+
     @Override
     public void handleTask(Scanner in) {
         int choice = 0;
@@ -37,18 +39,36 @@ public class Chapter1 implements TaskHandler {
     }
 
     public void exercise1(Scanner in) {
-        UIUtility.showMenuTitle("Exercise 1");
-        // Your
+        UIUtility.showMenuTitle("Get Largest Number");
+        double userNum = InputUtility.getDouble("Enter a Number", in);
+        double userNum2 = InputUtility.getDouble("Enter another Number", in);
+        if (userNum >= userNum2) 
+        System.out.println("Largest Number" +  userNum );
+        else if (userNum<=userNum2){
+            System.out.println("Largest Number " +  userNum2 );
+        }
+        
+
     }
 
     public void exercise2(Scanner in) {
-        UIUtility.showMenuTitle("Exercise 2");
-        // Your code here
+        UIUtility.showMenuTitle("Average Number");
+        double userNum = InputUtility.getDouble("Enter a Number", in);
+        double userNum2 = InputUtility.getDouble("Enter another Number", in);
+        double average = (userNum + userNum2) / 2;
+        System.out.println("The Average number is " + average);
+
     }
 
     public void exercise3(Scanner in) {
-        UIUtility.showMenuTitle("Exercise 3");
-        // Your code here
+        UIUtility.showMenuTitle("Get the area of a circle");
+        double radius = InputUtility.getDouble("Enter the radius ", in);
+        double area = Math.PI * (radius * radius);
+        double circumference= Math.PI * 2 * radius;
+
+        System.out.println( "The circumference of the circle is: " + circumference) ;
+        System.out.println("The area of circle is: " + area);
+
     }
 
     public void sampleExercise(Scanner in) {
