@@ -65,8 +65,8 @@ public class Chapter1 implements TaskHandler {
         double area = Math.PI * (radius * radius);
         double circumference= Math.PI * 2 * radius;
 
-        System.out.println( "The circumference of the circle is: " + circumference) ;
-        System.out.println("The area of circle is: " + area);
+        System.out.printf( "The circumference of the circle is: %.2f" + circumference) ;
+        System.out.printf("The area of circle is: %.2f" + area);
 
     }
 
