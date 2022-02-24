@@ -42,11 +42,13 @@ public class Chapter1 implements TaskHandler {
         double userNum = InputUtility.getDouble("Enter a Number", in);
         double userNum2 = InputUtility.getDouble("Enter another Number", in);
         if (userNum >= userNum2){ 
-        System.out.println("Largest Number" +  userNum );
+        System.out.printf("Largest Number %0.2f" ,  userNum );
         }
         else if (userNum<=userNum2){
-            System.out.println("Largest Number " +  userNum2 );
+            System.out.printf("Largest Number %0.2f" ,  userNum2 );
+        
         }
+        
         
 
     }
@@ -56,7 +58,7 @@ public class Chapter1 implements TaskHandler {
         double userNum = InputUtility.getDouble("Enter a Number", in);
         double userNum2 = InputUtility.getDouble("Enter another Number", in);
         double average = (userNum + userNum2) / 2;
-        System.out.println("The Average number is " + average);
+        System.out.printf("The Average number is %.2f " , average);
 
     }
 
@@ -65,9 +67,8 @@ public class Chapter1 implements TaskHandler {
         double radius = InputUtility.getDouble("Enter the radius ", in);
         double area = Math.PI * (radius * radius);
         double circumference= Math.PI * 2 * radius;
-
-        System.out.printf( "The circumference of the circle is: %.2f", circumference) ;
-        System.out.printf("The area of circle is: %.2f",area);
+        System.out.printf( "%n The circumference of the circle is: %.2f" , circumference) ;
+        System.out.printf("%n The area of circle is: %.2f" , area);
 
     }
 
