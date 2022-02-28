@@ -11,3 +11,8 @@ I haven't done any java coding before so this will be a ***learing experiance***
 ## Chapter 1 
 
 I have leaned a little more this week. We used ***Bigdecimals*** and learned how to make big numbers and small numbers. We learned how to __multiply__ and *divide* small and big numbers. We learned more of some of the __For Loops__ and some more of the *While Loops*. This week was good to learn how to *** Add, Subtract, multiply and Divide *** with big and small numbers. 
+
+
+## Chapter 2
+
+We learned about the __Math Class__, **Char Data type** , and __Boolean data types__. With the math class we looked at a lot of the common uses for the math class like ***Math.pow , Math.Max and min, Math.sqrt and Math.round.*** We learned the __char__ is a character in single quotes the is a single letter. And of course the **boolean** is the true or false values. We learned the logical operators like the *** and, or , and not ***. we learned casting which i think is cool you can make a __doulbe to an int__ if you just need the int for the output. 
