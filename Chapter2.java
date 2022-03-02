@@ -39,10 +39,10 @@ public class Chapter2 implements TaskHandler {
 
     public void exercise1(Scanner in) {
         UIUtility.showMenuTitle("exercise 1");
+        int int1 = InputUtility.getInt("Enter a Number", in);
         
+            
         
-        
-
     }
 
     public void exercise2(Scanner in) {
