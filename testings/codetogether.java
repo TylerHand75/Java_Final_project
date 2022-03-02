@@ -35,7 +35,7 @@ public class codetogether {
         }
         else if ((Day>=20 && month == 4) || (Day<=20 && month== 5))
         {
-            System.out.println("your zodiac is Taurus");
+            System.out.println("you are a Taurus");
         }
         else if ((Day>=21 && month == 5) || (Day<=20 && month== 6))
         {
