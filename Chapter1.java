@@ -42,10 +42,10 @@ public class Chapter1 implements TaskHandler {
         double userNum = InputUtility.getDouble("Enter a Number", in);
         double userNum2 = InputUtility.getDouble("Enter another Number", in);
         if (userNum >= userNum2){ 
-        System.out.printf("Largest Number %0.2f" ,  userNum );
+        System.out.printf("Largest Number %.2f" ,  userNum );
         }
         else if (userNum<=userNum2){
-            System.out.printf("Largest Number %0.2f" ,  userNum2 );
+            System.out.printf("Largest Number %.2f" ,  userNum2 );
         
         }
         
