@@ -8,10 +8,10 @@ public class Chapter3 implements TaskHandler {
     public void handleTask(Scanner in) {
         int choice = 0;
         while (true) {
-            String menuTitle = "Chapter 1 Menu";
+            String menuTitle = "Chapter 3 Menu";
             String prompt = "Select an exercise";
             String[] menuOptions = {
-                    "Exercise 1", "Exercise 2", "Exercise 3", "Sample Exercise"
+                    "Exercise 1", "Exercise 2", "Exercise 3" 
             };
             choice = UIUtility.showMenuOptions(menuTitle, prompt, menuOptions, in);
             if (choice == 0)
@@ -28,13 +28,10 @@ public class Chapter3 implements TaskHandler {
                 case 3:
                     exercise3(in);
                     break;
-                case 4:
-                    sampleExercise(in);
-                    break;
             }
             UIUtility.pressEnterToContinue(in);
         }
-        System.out.println("\nExiting Chapter 1 Menu.");
+        System.out.println("\nExiting Chapter 3 Menu.");
     }
 
     public void exercise1(Scanner in) {
@@ -57,8 +54,4 @@ public class Chapter3 implements TaskHandler {
 
     }
 
-    public void sampleExercise(Scanner in) {
-        UIUtility.showMenuTitle("Sample Exercise");
-       
-    }
 }

@@ -39,10 +39,7 @@ public class Chapter2 implements TaskHandler {
 
     public void exercise1(Scanner in) {
         UIUtility.showMenuTitle("exercise 1");
-        Scanner scan = new Scanner(System.in);
-
-        System.out.print("Enter a number: ");
-        int num = scan.nextInt();
+        int num = InputUtility.getInt("Enter a number: ", in);
 
         if (num % 2 == 0)
             System.out.println(num + " is even");
@@ -61,7 +58,7 @@ public class Chapter2 implements TaskHandler {
         int indexOfDecimal = doubleAsString.indexOf(".");
         System.out.println("Double Number: " + decimal);
         System.out.println("Integer Part: " + doubleAsString.substring(0, indexOfDecimal));
-        System.out.println("Decimal Part: " + doubleAsString.substring(indexOfDecimal));
+        System.out.printf("Decimal Part:%.2" + doubleAsString.substring(indexOfDecimal));
 
     }
 
