@@ -16,3 +16,7 @@ I have leaned a little more this week. We used ***Bigdecimals*** and learned how
 ## Chapter 2
 
 We learned about the __Math Class__, **Char Data type** , and __Boolean data types__. With the math class we looked at a lot of the common uses for the math class like ***Math.pow , Math.Max and min, Math.sqrt and Math.round.*** We learned the __char__ is a character in single quotes the is a single letter. And of course the **boolean** is the true or false values. We learned the logical operators like the *** and, or , and not ***. we learned casting which i think is cool you can make a __doulbe to an int__ if you just need the int for the output. 
+
+## Chapter 3
+
+We learned about __if statements__, **nested ifs**, ***Dates***, and __Switch statments__. __Dates__ was fun we were able to get days of the week, days, months, and years from any date that we put in so we could tell what day of the week someone was born and we did an exercise to see someones zodiac sign was. We did more with the __For Loops__ and then learned about the **while and Do While loops**. We did the __Break statement__ and the ***continue statement**. 
