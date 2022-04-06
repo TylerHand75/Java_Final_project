@@ -69,14 +69,19 @@ public class Chapter3 implements TaskHandler {
         double min = Double.MAX_VALUE;
         while (sum >= 0) {
             numbers = InputUtility.getString(" Enter some numbers (enter S to stop):", in);
-            if ("S".equals(numbers)) {
+            if ("S".equalsIgnoreCase(numbers)) {
                 break;
             }
-            if ("s".equals(numbers)) {
-                break;
-            }
-            double num = Double.parseDouble(numbers);
+            double num;
+               try {
+                 num = Double.parseDouble(numbers);
+               } catch (NumberFormatException ex) {
+                   System.out.println("invalid statement.");
+                   System.out.println("Try Again");
+                   continue;
+               }
             sum = sum + num;
+           
             if (num > max) {
                 max = num;
             }
@@ -84,6 +89,7 @@ public class Chapter3 implements TaskHandler {
                 min = num;
             }
             count++;
+            
         }
         double average = sum / count;
         System.out.println("sum: " + sum);

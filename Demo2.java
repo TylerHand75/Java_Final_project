@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -86,6 +87,11 @@ class Donation {
 
 public class Demo2 {
     public static void main(String[] args) {
+        ArrayList<Donation> donations = new ArrayList<>();
+        donations.add(new Donation(50, "In support of this campaign", "Marc Hauschildt", LocalDate.now()));
+
+
+
         Scanner sc = new Scanner(System.in);
         Donation donation = new Donation();
         while(true) {
