@@ -23,3 +23,4 @@ We learned about __if statements__, **nested ifs**, ***Dates***, and __Switch st
 
 ## Chapter 4 
 
+We learned about creating __classes__, __methods__, and __objects__. We leanred how to make a class to do 1 thing like to make a class to calculate something to then take it and to call it for another thing you need. **Method** are fun because they can get called in anything that has a public return that can be accessed. THis will make coding better and less hassling since you can save things and reuse the code for other projects. 
