@@ -164,7 +164,6 @@ public class Chapter4 implements TaskHandler {
             
             Fraction fract5 = new Fraction(fract1, fract2);
             Fraction fract6 = new Fraction(fract3, fract4);
-            
             System.out.println(fract5.add(fract6));
         
             }catch (IllegalArgumentException ex ) {
