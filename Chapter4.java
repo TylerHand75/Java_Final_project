@@ -142,13 +142,12 @@ public class Chapter4 implements TaskHandler {
     public void exercise7(Scanner in) {
         Fraction fract1 =  new Fraction(13,5);
         Fraction fract2 = new Fraction(4,8);
-        System.out.printf(fract1.mixedNumber() + " + " +  fract2.mixedNumber() + " = ");
-        System.out.println(fract1.add(fract2.simplify()));
+        
+        System.out.println(fract1.add(fract2));
 
         Fraction fract3 =  new Fraction(-13,-5);
         Fraction fract4 = new Fraction(13,-5);
-        System.out.printf(fract3.mixedNumber() +" + " +  fract4.mixedNumber() + " = ");
-        System.out.println(fract3.add(fract4.simplify()));
+        System.out.println(fract3.add(fract4));
 
 
 
@@ -165,8 +164,8 @@ public class Chapter4 implements TaskHandler {
             
             Fraction fract5 = new Fraction(fract1, fract2);
             Fraction fract6 = new Fraction(fract3, fract4);
-            System.out.printf(fract5.mixedNumber() + " + " +  fract6.mixedNumber() + " = ");
-            System.out.println(fract5.add(fract6.simplify()));
+            
+            System.out.println(fract5.add(fract6));
         
             }catch (IllegalArgumentException ex ) {
                 System.out.println(ex.getMessage());
@@ -273,7 +272,10 @@ class Fraction {
         int b = this.denominator;
         int c = otherFraction.numerator;
         int d = otherFraction.denominator;
-        return ((a*d) + (c*b)) + "/" + (b*d);
+        Fraction fract1 = new Fraction();
+        fract1.setNumerator(((a*d) + (c*b)));
+        fract1.setDenominator((b*d));
+        return this.mixedNumber() + " + " + otherFraction.mixedNumber() + " = " + fract1.mixedNumber();
         
 
     }

@@ -11,17 +11,29 @@ public class chapter5Demo {
         Book[] bookshelf = new Book[10];
         bookshelf[0] = new Book();
 
-        String[] months = new String[5];
+        String[] months = new String[12];
         months[0] = "Jan";
         months[1] = "Feb";
         months[2] = "Mar";
         months[3] = "Apr";
         months[4] = "May";
+        int location = Arrays.binarySearch(months, "February");
+        System.out.println(location);
+
+        String[] months2 = months;
+        months2[0] = "January";
+        months2[1] = "Febuary";
+        months2[2] = "March";
+        months2[3] = "April";
+        months2[4] = "May";
+
+        System.out.println(Arrays.toString(months2));
+
+
         Arrays.sort(months);
         for (String month : months) {
 
             System.out.println(month);
-
         }
         for (int i = 0; i < months.length; i++) {
             System.out.println(months[i]);

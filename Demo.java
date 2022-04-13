@@ -39,7 +39,6 @@ public class Demo {
         System.out.print(n + " ");
         }
         
-
         
         
 

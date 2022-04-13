@@ -60,7 +60,8 @@ public class Chapter5Challenge implements TaskHandler {
         Integer[] list = getRandomIntegerArray();
         System.out.println("Original list: " + Arrays.toString(list));
         
-        int pointOfUpdate = InputUtility.getIntInRange("Enter the point to update between 0 and " + (list.length - 1), 0, list.length - 1, in);
+        int pointOfUpdate = InputUtility.getIntInRange("Enter the point to update between 0 and " 
+        + (list.length - 1), 0, list.length - 1, in);
         int userint = InputUtility.getInt("Enter a number to update the location to: ", in);
         list[pointOfUpdate] = userint;
         
@@ -88,7 +89,8 @@ public class Chapter5Challenge implements TaskHandler {
         Integer[] list = getRandomIntegerArray();
         System.out.println("Original list: " + Arrays.toString(list));
         
-        int pointOfDelete = InputUtility.getIntInRange("Enter the point to delete between 0 and " + (list.length - 1), 0, list.length -1, in);
+        int pointOfDelete = InputUtility.getIntInRange("Enter the point to delete between 0 and " 
+        + (list.length - 1), 0, list.length -1, in);
         list[pointOfDelete] = null;
 
         System.out.println("Modified list: " + Arrays.toString(list));
@@ -99,8 +101,10 @@ public class Chapter5Challenge implements TaskHandler {
         Integer[] list = getRandomIntegerArray();
         System.out.println("Original list: " + Arrays.toString(list));
 
-        int pointOfSwap1 = InputUtility.getIntInRange("Enter the point to swap between 0 and " + (list.length - 1), 0, list.length - 1 , in);
-        int pointOfSwap2 = InputUtility.getIntInRange("Enter another the point to Swap between 0 and " + (list.length - 1), 0, list.length - 1 , in);
+        int pointOfSwap1 = InputUtility.getIntInRange("Enter the point to swap between 0 and " 
+        + (list.length - 1), 0, list.length - 1 , in);
+        int pointOfSwap2 = InputUtility.getIntInRange("Enter another the point to Swap between 0 and " 
+        + (list.length - 1), 0, list.length - 1 , in);
         int temp = list[pointOfSwap1];
         list[pointOfSwap1] = list[pointOfSwap2];
         list[pointOfSwap2] = temp;
