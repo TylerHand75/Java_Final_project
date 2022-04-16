@@ -37,8 +37,8 @@ public class Chapter3 implements TaskHandler {
 
     public void exercise1(Scanner in) {
         UIUtility.showMenuTitle("Get Largest Number");
-        int number1 = InputUtility.getInt(" Enter a Number: ", in);
-        int number2 = InputUtility.getInt(" Enter a Number: ", in);
+        int number1 = InputUtility.getInt("Enter a Number", in);
+        int number2 = InputUtility.getInt("Enter a Number", in);
 
         for (int x = number1 + 1; x < number2; x++) {
             if (x % 2 == 0) {
@@ -48,31 +48,22 @@ public class Chapter3 implements TaskHandler {
                 break;
             }
         }
-        if (number1 % 2 == 1) {
-            number1--;
-        }
-        for (int j = number1; j >= number2; j -= 2) {
-            System.out.println(j + " ");
-            if (j % number2 == 0)
-                break;
-        }
-    }
 
-    
+    }
 
     public void exercise2(Scanner in) {
         UIUtility.showMenuTitle("Average Number");
-        String numbers = " ";
+        String numbers = "";
         double sum = 0;
         int count = 0;
         double max = Double.MIN_VALUE;
         double min = Double.MAX_VALUE;
         while (sum >= 0) {
-            numbers = InputUtility.getString(" Enter some numbers (enter S to stop):", in);
+            numbers = InputUtility.getString("Enter some numbers (enter S to stop):", in);
             if ("S".equals(numbers)) {
                 break;
             }
-            if ("s".equals(numbers)) {
+            if ("s".equals(numbers)){
                 break;
             }
             double num = Double.parseDouble(numbers);
@@ -97,20 +88,20 @@ public class Chapter3 implements TaskHandler {
     public void exercise3(Scanner in) {
         UIUtility.showMenuTitle("Get the area of a circle");
         Random rnd = new Random();
-        int num1 = rnd.nextInt(12 + 1);
+        int num = rnd.nextInt(12 + 1);
         int num2 = rnd.nextInt(12 + 1);
-        int total = num1 * num2;
+        int total = num * num2;
         for (int x = 2; x >= 0; x--) {
-            int userAnswer = InputUtility.getInt(" What is " + num1 + (" X ") + num2, in);
+            int userAnswer = InputUtility.getInt("What is " + num + (" X ") + num2, in);
             if (userAnswer == total) {
                 System.out.println("Correct");
                 break;
             } else if (x == 2) {
-                System.out.println(" You have 2 attempts left! ");
+                System.out.println("you have 2 attempts left");
             } else if (x == 1) {
-                System.out.println(" You have 1 attempts left! ");
+                System.out.println("you have 1 attempts left");
             } else if (x == 0) {
-                System.out.println(" The answer was " + total + " Try again. ");
+                System.out.println("The answer was " + total + " Try again.");
                 break;
             }
         }

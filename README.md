@@ -20,3 +20,7 @@ We learned about the __Math Class__, **Char Data type** , and __Boolean data typ
 ## Chapter 3
 
 We learned about __if statements__, **nested ifs**, ***Dates***, and __Switch statments__. __Dates__ was fun we were able to get days of the week, days, months, and years from any date that we put in so we could tell what day of the week someone was born and we did an exercise to see someones zodiac sign was. We did more with the __For Loops__ and then learned about the **while and Do While loops**. We did the __Break statement__ and the ***continue statement**. 
+
+## Chapter 4 
+
+We learned about creating __classes__, __methods__, and __objects__. We leanred how to make a class to do 1 thing like to make a class to calculate something to then take it and to call it for another thing you need. **Method** are fun because they can get called in anything that has a public return that can be accessed. THis will make coding better and less hassling since you can save things and reuse the code for other projects. 

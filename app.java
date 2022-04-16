@@ -7,7 +7,7 @@ public class app {
             String menuTitle = "Main Menu";
             String prompt = "Select an chapter";
             String[] menuOptions = {
-                "Chapter 1","Chapter 2","Chapter 3","Chapter 4","Chapter 5","Chapter 6", "Chapter 7"
+                "Chapter 1","Chapter 2","Chapter 3","Chapter 4","Chapter 5","Chapter 6", "Chapter 7", "chapter 5 Challenge"
             };
             choice = UIUtility.showMenuOptions(menuTitle, prompt, menuOptions, scanner);
             if (choice == 0)
@@ -35,6 +35,9 @@ public class app {
                     break;
                 case 7:
                     new Chapter7().handleTask(scanner);
+                    break;
+                case 8: 
+                    new Chapter5Challenge().handleTask(scanner);
                     break;
             }
             UIUtility.pressEnterToContinue(scanner);
