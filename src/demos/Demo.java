@@ -41,12 +41,6 @@ public class Demo {
         n += 2;
         System.out.print(n + " ");
         }
-        int[] a = { 1, 2, 3, 4, 5, 6, 7 };
-        a[3]++;
-        a[2] = a[3] + 1;
-        a[6]--;
-        a[5] = a[2] / 2;
-        System.out.println(a);
         
     }
 

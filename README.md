@@ -28,11 +28,14 @@ We learned about creating __classes__, __methods__, and __objects__. We leanred 
 
 ## Chapter 5
 
+We learned about __One-dimensional Arrays__ and how to get their length. we also learned how to get the ***max and min values*** in the array and how to sort them from biggest to smallest. We learned about some of the out of bounds exeptions. We learned how to sort them in different ways or take one value and move it to a different pissition in the array. This was a good chapter but I am still having a few issues with arrays in the for and if loops. 
+
 
 ## User Stories video games library
 
 - can the user look up a certain game
 - is the game only on a certain system 
+- What is the price of the game
 - is the game a certain genre
 - look at the ratings 
 - see how many copys have been sold
@@ -41,7 +44,15 @@ We learned about creating __classes__, __methods__, and __objects__. We leanred 
 - sort games from a to z or z to a 
 - update the games page
 - see if the games is old or a remaster
-- 
+
+
+## Class diagram
+
+| +Game | 
+|:------|
+|-title:String <br> -publisher:String <br> -price:double|
+|<\<create>> +game <br> <\<create>> +game(title:String, publisher:String, price:double) <br> +getTitle():String <br> +settitle(title:string):void <br> -validateTitle(title:String):void<br> +getpublisher():String<br> +setPublisher(publisher:String):void <br> -validatePublisher(publisher:String):void <br> +getprice():Double<br> +setprice(price:double):void <br> -validateprice(price:double):void<br> +toString():string<br> +compareTo(other:Game):double     |
+
 
 
 
