@@ -1,11 +1,14 @@
+package src.demos;
 
+import src.utilities.UIUtility;
+import src.utilities.InputUtility;
+import src.utilities.TaskHandler;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
-
 
 public class Demo {
     public static void main(String[] args) {
@@ -38,13 +41,13 @@ public class Demo {
         n += 2;
         System.out.print(n + " ");
         }
+        int[] a = { 1, 2, 3, 4, 5, 6, 7 };
+        a[3]++;
+        a[2] = a[3] + 1;
+        a[6]--;
+        a[5] = a[2] / 2;
+        System.out.println(a);
         
-        
-        
-
     }
-    
-    
-    
-        
+
 }

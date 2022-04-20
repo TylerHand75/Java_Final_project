@@ -1,8 +1,12 @@
+package src.chapter_assignments;
+import src.utilities.UIUtility;
+import src.utilities.InputUtility;
+import src.utilities.TaskHandler;
 import java.util.Scanner;
 
 import javax.sql.rowset.spi.SyncResolver;
 
-public class Chapter6 implements TaskHandler {
+public class Chapter5 implements TaskHandler {
 
     @Override
     public void handleTask(Scanner in) {
@@ -40,20 +44,15 @@ public class Chapter6 implements TaskHandler {
     public void exercise1(Scanner in) {
         UIUtility.showMenuTitle("Get Largest Number");
         
-        
-        
-
     }
 
     public void exercise2(Scanner in) {
         UIUtility.showMenuTitle("Average Number");
-        
 
     }
 
     public void exercise3(Scanner in) {
         UIUtility.showMenuTitle("Get the area of a circle");
-        
 
     }
 

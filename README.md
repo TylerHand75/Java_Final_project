@@ -24,3 +24,24 @@ We learned about __if statements__, **nested ifs**, ***Dates***, and __Switch st
 ## Chapter 4 
 
 We learned about creating __classes__, __methods__, and __objects__. We leanred how to make a class to do 1 thing like to make a class to calculate something to then take it and to call it for another thing you need. **Method** are fun because they can get called in anything that has a public return that can be accessed. THis will make coding better and less hassling since you can save things and reuse the code for other projects. 
+
+
+## Chapter 5
+
+
+## User Stories video games library
+
+- can the user look up a certain game
+- is the game only on a certain system 
+- is the game a certain genre
+- look at the ratings 
+- see how many copys have been sold
+- add a new game 
+- delete an old game 
+- sort games from a to z or z to a 
+- update the games page
+- see if the games is old or a remaster
+- 
+
+
+
