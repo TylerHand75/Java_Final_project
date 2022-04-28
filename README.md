@@ -50,7 +50,7 @@ We learned about __One-dimensional Arrays__ and how to get their length. we also
 
 | +Game | 
 |:------|
-|-title:String <br> -publisher:String <br> -price:double|
+|-title:String <br> -publisher:String <br> -price:double <br> -timeToBeat:double <br>    |
 |<\<create>> +game <br> <\<create>> +game(title:String, publisher:String, price:double) <br> +getTitle():String <br> +settitle(title:string):void <br> -validateTitle(title:String):void<br> +getpublisher():String<br> +setPublisher(publisher:String):void <br> -validatePublisher(publisher:String):void <br> +getprice():Double<br> +setprice(price:double):void <br> -validateprice(price:double):void<br> +toString():string<br> +compareTo(other:Game):double     |
 
 
