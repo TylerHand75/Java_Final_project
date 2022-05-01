@@ -1,8 +1,12 @@
+package src.chapter_assignments;
+import src.utilities.UIUtility;
+import src.utilities.InputUtility;
+import src.utilities.TaskHandler;
 import java.util.Scanner;
 
-import javax.sql.rowset.spi.SyncResolver;
 
-public class Chapter6 implements TaskHandler {
+
+public class Chapter7 implements TaskHandler {
 
     @Override
     public void handleTask(Scanner in) {
