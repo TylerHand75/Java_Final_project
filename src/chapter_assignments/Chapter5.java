@@ -17,7 +17,7 @@ public class Chapter5 implements TaskHandler {
             String menuTitle = "Chapter 1 Menu";
             String prompt = "Select an exercise";
             String[] menuOptions = {
-                    "Exercise 1", "Exercise 2"
+                    "Exercise 1", "Exercise 2", "Exercise 3"
             };
             choice = UIUtility.showMenuOptions(menuTitle, prompt, menuOptions, in);
             if (choice == 0)
@@ -30,6 +30,9 @@ public class Chapter5 implements TaskHandler {
                     break;
                 case 2:
                     exercise2(in);
+                    break;
+                case 3:
+                    exercise3(in);
                     break;
 
             }
@@ -150,4 +153,51 @@ public class Chapter5 implements TaskHandler {
             System.out.println("\"" + userString1 + "\" and " + "\"" + userString2 + "\" are equal");
         }
     }
+
+    public void exercise3(Scanner in) {
+        UIUtility.showMenuTitle("Exercise 3 ");
+
+        ArrayList<String> States = new ArrayList<String>();
+        ArrayList<String> Capitals = new ArrayList<String>();
+        States.add("Alabama");States.add("Alaska");States.add("Arizona");
+        States.add("Arkansas");States.add("California");States.add("Colorado");
+        States.add("Connecticut");States.add("Delaware");States.add("Florida");
+        States.add("Georgia");States.add("Hawaii");States.add("Idaho");
+        States.add("Illinois");States.add("Indiana");States.add("Iowa");
+        States.add("Kansas");States.add("Kentucky");States.add("Louisiana");
+        States.add("Maine");States.add("Maryland");States.add("Massachusetts");
+        States.add("Michigan");States.add("Minnesota");States.add("Mississippi");
+        States.add("Missouri");States.add("Montana");States.add("Nebraska");
+        States.add("Nevada");States.add("New Hampshire");States.add("New Jersey");
+        States.add("New Mexico");States.add("New York");States.add("North Carolina");
+        States.add("North Dakota");States.add("Ohio");States.add("Oklahoma");
+        States.add("Oregon");States.add("Pennsylvania");States.add("Rhode Island");
+        States.add("South Carolina");States.add("South Dakota");States.add("Tennessee");
+        States.add("Texas");States.add("Utah");States.add("Vermont");
+        States.add("Virginia");States.add("Washington");States.add("West Virginia");
+        States.add("Wisconsin");States.add("Wyoming");
+
+        Capitals.add("Montgomery"); Capitals.add("Juneau"); Capitals.add("Phoenix");
+        Capitals.add("Little Rock"); Capitals.add("Sacramento"); Capitals.add("Denver");
+        Capitals.add("Hartford"); Capitals.add("Dover"); Capitals.add("Tallahassee");
+        Capitals.add("Atlanta"); Capitals.add("Honolulu"); Capitals.add("Boise");
+        Capitals.add("Springfield"); Capitals.add("Indianapolis"); Capitals.add("Des Moines");
+        Capitals.add("Topeka"); Capitals.add("Frankfort"); Capitals.add("Baton Rouge");
+        Capitals.add("Augusta"); Capitals.add("Annapolis"); Capitals.add("Boston");
+        Capitals.add("Lansing"); Capitals.add("Saint Paul"); Capitals.add("Jackson");
+        Capitals.add("Jefferson City"); Capitals.add("Helena"); Capitals.add("Lincoln");
+        Capitals.add("Carson City"); Capitals.add("Concord"); Capitals.add("Trenton");
+        Capitals.add("Santa Fe"); Capitals.add("Albany"); Capitals.add("Raleigh");
+        Capitals.add("Bismarck"); Capitals.add("Colombus"); Capitals.add("Oklahoma City");
+        Capitals.add("Salem"); Capitals.add("Harrisburg"); Capitals.add("Providence");
+        Capitals.add("Columbia"); Capitals.add("Pierre"); Capitals.add("Nashville");
+        Capitals.add("Austin"); Capitals.add("Salt Lake City"); Capitals.add("Montpelier");
+        Capitals.add("Richmond"); Capitals.add("Olympia"); Capitals.add("Charleston");
+        Capitals.add("Madison"); Capitals.add("Cheyenne");
+        
+        System.out.println(States);
+        System.out.println(Capitals);
+
+    }
+
 }
