@@ -28,7 +28,7 @@ public class GameLibrary {
         if (GameType.equalsIgnoreCase("E for Everyone")) {
             Game = new Game();
         } else {
-            Game = new GamePublishers();
+            Game = new Fps();
         }
         while (true) {
             String title = InputUtility.getString("What is the title?", in);
@@ -43,35 +43,35 @@ public class GameLibrary {
         // How many pages?
 
         if (GameType.equalsIgnoreCase("T for Teen")) {
-            Person publisher = new Person();
+            Person fps = new Person();
             while (true) {
-                String firstName = InputUtility.getString("What is the Publisher's name?", in);
+                String firstName = InputUtility.getString("What is the Fps's name?", in);
                 try {
-                    publisher.setFirstName(firstName);
+                    fps.setFirstName(firstName);
                     break;
                 } catch (IllegalArgumentException e) {
                     System.out.println(e.getMessage());
                 }
             }
-            // Prompt for Publisher's last name
-            // Set the Game's Publisher
-            ((GamePublishers) Game).setPublisher(publisher);
+            // Prompt for Fps's last name
+            // Set the Game's Fps
+            ((Fps) Game).setFps(fps);
         }
         
         if (GameType.equalsIgnoreCase("M for Mature")) {
-            Person publisher = new Person();
+            Person fps = new Person();
             while (true) {
-                String firstName = InputUtility.getString("What is the Publisher's name?", in);
+                String firstName = InputUtility.getString("What is the Fps's name?", in);
                 try {
-                    publisher.setFirstName(firstName);
+                    fps.setFirstName(firstName);
                     break;
                 } catch (IllegalArgumentException e) {
                     System.out.println(e.getMessage());
                 }
             }
-            // Prompt for Publisher's last name
-            // Set the Game's Publisher
-            ((GamePublishers) Game).setPublisher(publisher);
+            // Prompt for Fps's last name
+            // Set the Game's Fps
+            ((Fps) Game).setFps(fps);
         }
 
         games[gameCount++] = Game;
@@ -113,9 +113,9 @@ public class GameLibrary {
         // Ask to update the author's first name
         // Ask to update the author's last name
         // Ask to update the number of pages
-        if (Game instanceof GamePublishers) {
-            // Ask to update the Publisher's firstname
-            // Ask to update the Publisher's lastname
+        if (Game instanceof Fps) {
+            // Ask to update the Fps's firstname
+            // Ask to update the Fps's lastname
         }
         games[choice - 1] = Game;
         UIUtility.showMenuTitle("Game successfully updated");

@@ -141,10 +141,10 @@ public class chapter5Demo {
             System.out.println("Not found");
         }
 
-        String sentence = "The quick brown fox jumped over the lazy dogs";
+        String sentence = "The quick brown fox \"jumped\"  over the lazy dogs";
         System.out.println(sentence.replace("brown", "red"));
         System.out.println(sentence.replace("lazy", "relaxing"));
-        sentence = "The quick brown fox jumped over the brown dogs";
+        sentence = "The quick brown fox \"jumped\" over the brown dogs";
         System.out.println(sentence.replaceAll("brown", "blue"));
 
         String[] words = sentence.split(" ");

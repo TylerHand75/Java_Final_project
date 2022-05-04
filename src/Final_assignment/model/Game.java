@@ -4,19 +4,19 @@ import src.Final_assignment.model.Person;
 
 public class Game implements Comparable<Game> {
     private String title;
-    private Person publisher;
-    private int numOfHoursToComplete;
+    private Person fps;
+    private int numOfGames;
 
     public Game() {
         title = "Undefined";
-        publisher = new Person();
-        numOfHoursToComplete = 0;
+        fps = new Person();
+        numOfGames = 0;
     }
 
-    public Game(String title, Person publisher, int numOfHoursToComplete) {
+    public Game(String title, Person Fps, int numOfGames) {
         setTitle(title);
-        setPublisher(publisher);
-        setNumOfHoursToComplete(numOfHoursToComplete);
+        setFps(Fps);
+        setnumOfGames(numOfGames);
     }
 
     public String getTitle() {
@@ -34,31 +34,31 @@ public class Game implements Comparable<Game> {
         }
     }
 
-    public Person getPublisher() {
-        return publisher;
+    public Person getFps() {
+        return fps;
     }
 
-    public void setPublisher(Person publisher) {
-        validatePublisher(publisher);
-        this.publisher = publisher;
+    public void setFps(Person Fps) {
+        validateFps(fps);
+        this.fps = fps;
     }
 
-    private void validatePublisher(Person publisher) {
-        if(publisher == null) {
-            throw new IllegalArgumentException("Publisher is required");
+    private void validateFps(Person Fps) {
+        if(Fps == null) {
+            throw new IllegalArgumentException("Fps is required");
         }
     }
 
-    public int getNumOfHoursToComplete() {
-        return numOfHoursToComplete;
+    public int getNumOfGames() {
+        return numOfGames;
     }
 
-    public void setNumOfHoursToComplete(int numOfHoursToCompete) {
-        validateNumOFHoursToComplete(numOfHoursToComplete);
-        this.numOfHoursToComplete = numOfHoursToComplete;
+    public void setnumOfGames(int numOfHoursToCompete) {
+        validatenumOfGames(numOfGames);
+        this.numOfGames = numOfGames;
     }
 
-    private void validateNumOFHoursToComplete(int numOfHoursToCompete) {
+    private void validatenumOfGames(int numOfHoursToCompete) {
         if(numOfHoursToCompete < 0) {
             throw new IllegalArgumentException("Number of Hours must be 0 or greater");
         }
@@ -66,14 +66,14 @@ public class Game implements Comparable<Game> {
 
     @Override
     public String toString() {
-        return String.format("Title: %s%nPublisher: %s%n", title, publisher);
+        return String.format("Title: %s%nFps: %s%n", title, fps);
     }
 
     @Override
     public int compareTo(Game other) {
         int result = this.title.compareTo(other.title);
         if(result == 0) {
-            result = this.publisher.compareTo(other.publisher);
+            result = this.fps.compareTo(other.fps);
         }
         return 0;
     }

@@ -17,7 +17,7 @@ public class Chapter5 implements TaskHandler {
             String menuTitle = "Chapter 1 Menu";
             String prompt = "Select an exercise";
             String[] menuOptions = {
-                    "Exercise 1", "Exercise 2", "Exercise 3"
+                    "Exercise 1", "Exercise 2", "Exercise 3", "Exercise 4"
             };
             choice = UIUtility.showMenuOptions(menuTitle, prompt, menuOptions, in);
             if (choice == 0)
@@ -195,9 +195,20 @@ public class Chapter5 implements TaskHandler {
         Capitals.add("Richmond"); Capitals.add("Olympia"); Capitals.add("Charleston");
         Capitals.add("Madison"); Capitals.add("Cheyenne");
         
+        String userinput1 = InputUtility.getString("Please Enter a letter", in);
+        
+        boolean found = States.contains(userinput1.substring(0));
+        if (found){
+            System.out.println(States.equals(userinput1));
+        }
+
+
+
         System.out.println(States);
         System.out.println(Capitals);
 
     }
-
+    public void exercise4(Scanner in) {
+        UIUtility.showMenuTitle("Exercise 4 ");
+    }
 }
