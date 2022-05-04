@@ -159,53 +159,15 @@ public class Chapter5 implements TaskHandler {
     public void exercise3(Scanner in) {
         UIUtility.showMenuTitle("Exercise 3 ");
 
-        String[] States = new String[50];
-        String[] Capitals = new String[50];
-        States[0]=("Alabama");States[1]=("Alaska");States[2]=("Arizona");
-        States[3]=("Arkansas");States[4]=("California");States[5]=("Colorado");
-        States[6]=("Connecticut");States[7]=("Delaware");States[8]=("Florida");
-        States[9]=("Georgia");States[10]=("Hawaii");States[11]=("Idaho");
-        States[12]=("Illinois");States[13]=("Indiana");States[14]=("Iowa");
-        States[15]=("Kansas");States[16]=("Kentucky");States[17]=("Louisiana");
-        States[18]=("Maine");States[19]=("Maryland");States[20]=("Massachusetts");
-        States[21]=("Michigan");States[22]=("Minnesota");States[23]=("Mississippi");
-        States[24]=("Missouri");States[25]=("Montana");States[26]=("Nebraska");
-        States[27]=("Nevada");States[28]=("New Hampshire");States[29]=("New Jersey");
-        States[30]=("New Mexico");States[31]=("New York");States[32]=("North Carolina");
-        States[33]=("North Dakota");States[34]=("Ohio");States[35]=("Oklahoma");
-        States[36]=("Oregon");States[37]=("Pennsylvania");States[38]=("Rhode Island");
-        States[39]=("South Carolina");States[40]=("South Dakota");States[41]=("Tennessee");
-        States[42]=("Texas");States[43]=("Utah");States[44]=("Vermont");
-        States[45]=("Virginia");States[46]=("Washington");States[47]=("West Virginia");
-        States[48]=("Wisconsin");States[49]=("Wyoming");
+        String[] States = {"Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"};
+        String[] Capitals = {"Montgomery", "Juneau", "Phoenix", "Little Rock", "Sacramento", "Denver", "Hartford", "Dover", "Tallahassee", "Atlanta", "Honolulu", "Boise", "Springfield", "Indianapolis", "Des Moines", "Topeka", "Frankfort", "Baton Rouge", "Augusta", "Annapolis", "Boston", "Lansing", "Saint Paul", "Jackson", "Jefferson City", "Helena", "Lincoln", "Carson City", "Concord", "Trenton", "Santa Fe", "Albany", "Raleigh", "Bismarck", "Colombus", "Oklahoma City", "Salem", "Harrisburg", "Providence", "Columbia", "Pierre", "Nashville", "Austin", "Salt Lake City", "Montpelier", "Richmond", "Olympia", "Charleston", "Madison", "Cheyenne"};
+        
 
-        Capitals[0]=("Montgomery"); Capitals[1]=("Juneau"); Capitals[2]=("Phoenix");
-        Capitals[3]=("Little Rock"); Capitals[4]=("Sacramento"); Capitals[5]=("Denver");
-        Capitals[6]=("Hartford"); Capitals[7]=("Dover"); Capitals[8]=("Tallahassee");
-        Capitals[9]=("Atlanta"); Capitals[10]=("Honolulu"); Capitals[11]=("Boise");
-        Capitals[12]=("Springfield"); Capitals[13]=("Indianapolis"); Capitals[14]=("Des Moines");
-        Capitals[15]=("Topeka"); Capitals[16]=("Frankfort"); Capitals[17]=("Baton Rouge");
-        Capitals[18]=("Augusta"); Capitals[19]=("Annapolis"); Capitals[20]=("Boston");
-        Capitals[21]=("Lansing"); Capitals[22]=("Saint Paul"); Capitals[23]=("Jackson");
-        Capitals[24]=("Jefferson City"); Capitals[25]=("Helena"); Capitals[26]=("Lincoln");
-        Capitals[27]=("Carson City"); Capitals[28]=("Concord"); Capitals[29]=("Trenton");
-        Capitals[30]=("Santa Fe"); Capitals[31]=("Albany"); Capitals[32]=("Raleigh");
-        Capitals[33]=("Bismarck"); Capitals[34]=("Colombus"); Capitals[35]=("Oklahoma City");
-        Capitals[36]=("Salem"); Capitals[37]=("Harrisburg"); Capitals[38]=("Providence");
-        Capitals[39]=("Columbia"); Capitals[40]=("Pierre"); Capitals[41]=("Nashville");
-        Capitals[42]=("Austin"); Capitals[43]=("Salt Lake City"); Capitals[44]=("Montpelier");
-        Capitals[45]=("Richmond"); Capitals[46]=("Olympia"); Capitals[47]=("Charleston");
-        Capitals[48]=("Madison"); Capitals[49]=("Cheyenne");
+        
         
         String userinput1 = InputUtility.getString("Please Enter a letter", in);
         
-        Arrays.sort(States);
-        for (String State : States) {
-
-            System.out.println(State);
-        }
-        for (int i = 0; i < States.length; i++) {
-            System.out.println(States[i]);
+        if (userinput1){}
             
         }
         System.out.println(Arrays.toString(States));

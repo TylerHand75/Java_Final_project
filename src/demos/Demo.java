@@ -47,7 +47,17 @@ public class Demo {
         System.out.println("\n");
 
         int[] arr = { 12, 2, 9, 18, 10, 14, 6, 16 };
-        Arrays.sort(arr);
-        System.out.println(arr);
+        int count = 0;
+        int sum = 0;
+        for (int i = 0; i < arr.length ; i++) {
+            if (arr[i] % 3 == 0) {
+                count++;
+                sum += arr[i];
+                System.out.println("sum" + " " + sum + " " + "count"+ " " + count + " ");
+            }
+            
+        }
+        System.out.println((double)sum/count);
+        
     }
 }
