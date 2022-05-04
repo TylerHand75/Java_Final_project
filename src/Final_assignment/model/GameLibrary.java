@@ -12,11 +12,7 @@ public class GameLibrary {
     public GameLibrary() {
         games = new Game[20];
         games[gameCount++] = new Game("Call of Duty 4 Modern Warfare", new Person("Infinity", "Ward"),7 );
-        games[gameCount++] = new Game("JavaScript & jQuery: the missing manual", new Person("David", "McFarland"), 655);
-        games[gameCount++] = new GamePublishers("Green Eggs and Ham", new Person("Dr", "Suess"), 30,
-                new Person("Dr", "Suess"));
-        games[gameCount++] = new GamePublishers("Goodnight Mooon", new Person("Margaret", "Wise Brown"), 32,
-                new Person("Clement", "Hurd"));
+        
     }
 
     public boolean isFull() {
