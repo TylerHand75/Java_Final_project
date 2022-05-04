@@ -1,10 +1,10 @@
 package src.chapter_assignments;
+
 import src.utilities.UIUtility;
 import src.utilities.InputUtility;
 import src.utilities.TaskHandler;
 import java.math.BigInteger;
 import java.util.Scanner;
-
 
 public class Chapter4 implements TaskHandler {
 
@@ -15,7 +15,8 @@ public class Chapter4 implements TaskHandler {
             String menuTitle = "Chapter 1 Menu";
             String prompt = "Select an exercise";
             String[] menuOptions = {
-                    "Exercise 1", "Exercise 2", "Exercise 3", "Exercise 4", "Exercise 5", "Exercise 6", "Exercise 7", "Exercise 8"
+                    "Exercise 1", "Exercise 2", "Exercise 3", "Exercise 4", "Exercise 5", "Exercise 6", "Exercise 7",
+                    "Exercise 8"
             };
             choice = UIUtility.showMenuOptions(menuTitle, prompt, menuOptions, in);
             if (choice == 0)
@@ -119,7 +120,7 @@ public class Chapter4 implements TaskHandler {
 
         Fraction fract3 = new Fraction(4, 4);
         System.out.println(fract3.mixedNumber());
-        
+
         Fraction fract4 = new Fraction(8, 4);
         System.out.println(fract4.mixedNumber());
 
@@ -138,19 +139,20 @@ public class Chapter4 implements TaskHandler {
         Fraction fract9 = new Fraction(-13, -5);
         System.out.println(fract9.mixedNumber());
 
+        Fraction fraction10 = new Fraction(-2, 3);
+        System.out.println(fraction10.mixedNumber());
+
     }
 
     public void exercise7(Scanner in) {
-        Fraction fract1 =  new Fraction(13,5);
-        Fraction fract2 = new Fraction(4,8);
-        
+        Fraction fract1 = new Fraction(13, 5);
+        Fraction fract2 = new Fraction(4, 8);
+
         System.out.println(fract1.add(fract2));
 
-        Fraction fract3 =  new Fraction(-13,-5);
-        Fraction fract4 = new Fraction(13,-5);
+        Fraction fract3 = new Fraction(-13, -5);
+        Fraction fract4 = new Fraction(13, -5);
         System.out.println(fract3.add(fract4));
-
-
 
     }
 
@@ -160,19 +162,18 @@ public class Chapter4 implements TaskHandler {
         int fract2 = InputUtility.getInt("Please enter a Denominator", in);
         int fract3 = InputUtility.getInt("Please enter a Numerator", in);
         int fract4 = InputUtility.getInt("Please enter a Denominator", in);
-        
+
         try {
-            
+
             Fraction fract5 = new Fraction(fract1, fract2);
             Fraction fract6 = new Fraction(fract3, fract4);
             System.out.println(fract5.add(fract6));
-        
-            }catch (IllegalArgumentException ex ) {
-                System.out.println(ex.getMessage());
-                 
-            }
-            
-        
+
+        } catch (IllegalArgumentException ex) {
+            System.out.println(ex.getMessage());
+
+        }
+
     }
 
 }
@@ -214,7 +215,7 @@ class Fraction {
     // Part 3
     private void ValidateDenominator(int denominator) {
         if (denominator == 0) {
-            throw new IllegalArgumentException( " The denominator cannot be 0 " );
+            throw new IllegalArgumentException(" The denominator cannot be 0 ");
         }
     }
 
@@ -252,7 +253,7 @@ class Fraction {
             return num.toString();
         } else if (sfraction.numerator == 0) {
             return "0";
-        } else if (sfraction.numerator < 0) {
+        } else if (sfraction.numerator < -2) {
             int wholeNumber = sfraction.numerator / sfraction.denominator;
             int remaindor = (sfraction.numerator % sfraction.denominator) * -1;
             return "" + wholeNumber + " " + remaindor + "/" + sfraction.denominator;
@@ -260,26 +261,27 @@ class Fraction {
             int wholeNumber = sfraction.numerator / sfraction.denominator;
             int remaindor = sfraction.numerator % sfraction.denominator;
             return "" + wholeNumber + " " + remaindor + "/" + sfraction.denominator;
-        } else {
+        } 
+        
+        else {
             return sfraction.toString();
         }
 
     }
 
     // Part 7
-    public String add(Fraction otherFraction){
+    public String add(Fraction otherFraction) {
         int a = this.numerator;
         int b = this.denominator;
         int c = otherFraction.numerator;
         int d = otherFraction.denominator;
         Fraction fract1 = new Fraction();
-        fract1.setNumerator(((a*d) + (c*b)));
-        fract1.setDenominator((b*d));
+        fract1.setNumerator(((a * d) + (c * b)));
+        fract1.setDenominator((b * d));
         return this.mixedNumber() + " + " + otherFraction.mixedNumber() + " = " + fract1.mixedNumber();
-        
 
     }
-    
+
     public String toString() {
         return (numerator + "/" + denominator);
     }
