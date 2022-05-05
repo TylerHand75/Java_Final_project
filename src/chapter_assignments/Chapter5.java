@@ -35,11 +35,14 @@ public class Chapter5 implements TaskHandler {
                 case 3:
                     exercise3(in);
                     break;
+                case 4:
+                    exercise4(in);
+                    break;
 
             }
             UIUtility.pressEnterToContinue(in);
         }
-        System.out.println("\nExiting Chapter 1 Menu.");
+        System.out.println("\nExiting Chapter 5 Menu.");
     }
 
     public static String stringReverse(String pString) {
@@ -75,7 +78,6 @@ public class Chapter5 implements TaskHandler {
         ArrayList<Integer> odd = new ArrayList<Integer>();
         boolean nums = true;
         String input = "";
-        
 
         while (nums) {
             input = InputUtility.getString("Enter some numbers: type \"s\" to stop", in);
@@ -90,9 +92,9 @@ public class Chapter5 implements TaskHandler {
                 continue;
             }
             // if (number % 2 == 0) {
-            //     even[]=(number);
+            // even[]=(number);
             // } else if (number % 2 == 1) {
-            //     odd[]=(number);
+            // odd[]=(number);
             // }
         }
         if (odd.isEmpty()) {
@@ -159,25 +161,56 @@ public class Chapter5 implements TaskHandler {
     public void exercise3(Scanner in) {
         UIUtility.showMenuTitle("Exercise 3 ");
 
-        String[] States = {"Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"};
-        String[] Capitals = {"Montgomery", "Juneau", "Phoenix", "Little Rock", "Sacramento", "Denver", "Hartford", "Dover", "Tallahassee", "Atlanta", "Honolulu", "Boise", "Springfield", "Indianapolis", "Des Moines", "Topeka", "Frankfort", "Baton Rouge", "Augusta", "Annapolis", "Boston", "Lansing", "Saint Paul", "Jackson", "Jefferson City", "Helena", "Lincoln", "Carson City", "Concord", "Trenton", "Santa Fe", "Albany", "Raleigh", "Bismarck", "Colombus", "Oklahoma City", "Salem", "Harrisburg", "Providence", "Columbia", "Pierre", "Nashville", "Austin", "Salt Lake City", "Montpelier", "Richmond", "Olympia", "Charleston", "Madison", "Cheyenne"};
-        
-
-        
-        
+        String[] States = { "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
+                "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas",
+                "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi",
+                "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York",
+                "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island",
+                "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington",
+                "West Virginia", "Wisconsin", "Wyoming" };
+    
         String userinput1 = InputUtility.getString("Please Enter a letter", in);
-        
-        if (userinput1){}
-            
+        userinput1 = userinput1.toUpperCase();
+        int count = 0;
+        for (String state : States) {
+            if (state.charAt(0)== userinput1.charAt(0)){
+                count++;
+                
+            }
         }
-        System.out.println(Arrays.toString(States));
-       
-
-
-        
+        System.out.println(count + " States that start with " + userinput1 );
 
     }
+
     public void exercise4(Scanner in) {
         UIUtility.showMenuTitle("Exercise 4 ");
+       
+        String[] States = { "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
+                "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas",
+                "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi",
+                "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York",
+                "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island",
+                "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington",
+                "West Virginia", "Wisconsin", "Wyoming" };
+        String[] Capitals = { "Montgomery", "Juneau", "Phoenix", "Little Rock", "Sacramento", "Denver", "Hartford",
+                "Dover", "Tallahassee", "Atlanta", "Honolulu", "Boise", "Springfield", "Indianapolis", "Des Moines",
+                "Topeka", "Frankfort", "Baton Rouge", "Augusta", "Annapolis", "Boston", "Lansing", "Saint Paul",
+                "Jackson", "Jefferson City", "Helena", "Lincoln", "Carson City", "Concord", "Trenton", "Santa Fe",
+                "Albany", "Raleigh", "Bismarck", "Colombus", "Oklahoma City", "Salem", "Harrisburg", "Providence",
+                "Columbia", "Pierre", "Nashville", "Austin", "Salt Lake City", "Montpelier", "Richmond", "Olympia",
+                "Charleston", "Madison", "Cheyenne" };
+
+
+        for (int i = 0;i < 50;i++ ){
+            if(States[i].compareToIgnoreCase(Capitals[i]) < 0){
+                System.out.println(States[i] + " comes alphabetically before " + Capitals[i]);
+            }
+            else{
+                System.out.println(Capitals[i] + " comes alphabetically before " + States[i]);
+            }
+        }
+
+
     }
+   
 }
