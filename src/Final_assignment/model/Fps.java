@@ -8,8 +8,8 @@ public class Fps extends Game {
         fps = new Person();
     }
 
-    public Fps(String title, Person fps, int numOfGames) {
-        super(title, fps, numOfGames );
+    public Fps(String title, Person fps, Person person, int numOfGames) {
+        super(title, fps, person, numOfGames );
         setFps(fps);
     }
 

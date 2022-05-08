@@ -4,17 +4,20 @@ import src.Final_assignment.model.Person;
 
 public class Game implements Comparable<Game> {
     private String title;
+    private Person person;
     private Person fps;
     private int numOfGames;
 
     public Game() {
         title = "Undefined";
+        fps = new Person();
         numOfGames = 0;
     }
 
-    public Game(String title, Person fps, int numOfGames) {
+    public Game(String title, Person fps, Person person, int numOfGames) {
         setTitle(title);
         setFps(fps);
+        setPerson(person);
         setnumOfGames(numOfGames);
     }
 
@@ -30,6 +33,18 @@ public class Game implements Comparable<Game> {
     private void validateTitle(String title) {
         if(title == null || title.equals("")) {
             throw new IllegalArgumentException("The Game title is required.");
+        }
+    }
+    public String getPerson(){
+        return person.toString();
+    }
+    public void setPerson(String person){
+        validatePerson(person);
+        this.person = person;
+    }
+    private void validatePerson(String person){
+        if(person == null || person.equals("")) {
+            throw new IllegalArgumentException("The Game type and publisher is required.");
         }
     }
 
@@ -52,13 +67,13 @@ public class Game implements Comparable<Game> {
         return numOfGames;
     }
 
-    public void setnumOfGames(int numOfGames) {
+    public void setnumOfGames(int numOfHoursToCompete) {
         validatenumOfGames(numOfGames);
         this.numOfGames = numOfGames;
     }
 
-    private void validatenumOfGames(int numOfGames) {
-        if(numOfGames < 0) {
+    private void validatenumOfGames(int numOfHoursToCompete) {
+        if(numOfHoursToCompete < 0) {
             throw new IllegalArgumentException("Number of Hours must be 0 or greater");
         }
     }

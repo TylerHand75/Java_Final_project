@@ -8,10 +8,12 @@ import src.utilities.UIUtility;
 public class GameLibrary {
     private Game[] games;
     private static int gameCount = 0;
+   
 
     public GameLibrary() {
         games = new Game[20];
-        games[gameCount++] = new Game("Call of Duty 4 Modern Warfare", new Person("John", "Price"),7 );
+        games[gameCount++] = new Game("Call of Duty 4 Modern Warfare", new Person("John", "Price"),null, 7 );
+        games[gameCount++] = new Game();
         
     }
 
@@ -23,8 +25,11 @@ public class GameLibrary {
     public void addGame(Scanner in) {
         // Check if library is not full
         Game game;
+        Person person = new Person();
+        
         String gameType = InputUtility.validateUserString("What type of Game would you like to add?",
                 new String[] { "Regular", "First Person Shooter" }, in);
+                
         if (gameType.equalsIgnoreCase("Regular")) {
             game = new Game();
         } else {
@@ -32,12 +37,19 @@ public class GameLibrary {
         }
         while (true) {
             String title = InputUtility.getString("What is the title?", in);
+            String firstName = InputUtility.getString("What is the game types name?", in);
+            String lastName = InputUtility.getString("What is the publishers name?", in);
             try {
+                
                 game.setTitle(title);
+                person.setFirstName(firstName);
+                person.setLastName(lastName);
+
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
+            
         }
         // Who is the author?
         // How many pages?
@@ -129,7 +141,7 @@ public class GameLibrary {
     }
 
     public void  sortGamesByTitle(Scanner in ){
-
+        
 
     }
 
