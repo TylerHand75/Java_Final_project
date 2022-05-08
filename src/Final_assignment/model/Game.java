@@ -9,13 +9,12 @@ public class Game implements Comparable<Game> {
 
     public Game() {
         title = "Undefined";
-        fps = new Person();
         numOfGames = 0;
     }
 
-    public Game(String title, Person Fps, int numOfGames) {
+    public Game(String title, Person fps, int numOfGames) {
         setTitle(title);
-        setFps(Fps);
+        setFps(fps);
         setnumOfGames(numOfGames);
     }
 
@@ -38,13 +37,13 @@ public class Game implements Comparable<Game> {
         return fps;
     }
 
-    public void setFps(Person Fps) {
+    public void setFps(Person fps) {
         validateFps(fps);
         this.fps = fps;
     }
 
-    private void validateFps(Person Fps) {
-        if(Fps == null) {
+    private void validateFps(Person fps) {
+        if(fps == null) {
             throw new IllegalArgumentException("Fps is required");
         }
     }
@@ -53,13 +52,13 @@ public class Game implements Comparable<Game> {
         return numOfGames;
     }
 
-    public void setnumOfGames(int numOfHoursToCompete) {
+    public void setnumOfGames(int numOfGames) {
         validatenumOfGames(numOfGames);
         this.numOfGames = numOfGames;
     }
 
-    private void validatenumOfGames(int numOfHoursToCompete) {
-        if(numOfHoursToCompete < 0) {
+    private void validatenumOfGames(int numOfGames) {
+        if(numOfGames < 0) {
             throw new IllegalArgumentException("Number of Hours must be 0 or greater");
         }
     }

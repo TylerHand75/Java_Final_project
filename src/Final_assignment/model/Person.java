@@ -11,6 +11,7 @@ public class Person implements Comparable<Person> {
 
     public Person(String firstName, String lastName) {
         setFirstName(firstName);
+        setLastName(lastName);
         this.lastName = lastName;
     }
 

@@ -11,7 +11,7 @@ public class GameLibrary {
 
     public GameLibrary() {
         games = new Game[20];
-        games[gameCount++] = new Game("Call of Duty 4 Modern Warfare", new Person("Infinity", "Ward"),7 );
+        games[gameCount++] = new Game("Call of Duty 4 Modern Warfare", new Person("John", "Price"),7 );
         
     }
 
@@ -22,18 +22,18 @@ public class GameLibrary {
 
     public void addGame(Scanner in) {
         // Check if library is not full
-        Game Game;
-        String GameType = InputUtility.validateUserString("What type of Game would you like to add?",
-                new String[] { "E for Everyone", "T for Teen", "M for Mature" }, in);
-        if (GameType.equalsIgnoreCase("E for Everyone")) {
-            Game = new Game();
+        Game game;
+        String gameType = InputUtility.validateUserString("What type of Game would you like to add?",
+                new String[] { "Regular", "First Person Shooter" }, in);
+        if (gameType.equalsIgnoreCase("Regular")) {
+            game = new Game();
         } else {
-            Game = new Fps();
+            game = new Fps();
         }
         while (true) {
             String title = InputUtility.getString("What is the title?", in);
             try {
-                Game.setTitle(title);
+                game.setTitle(title);
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
@@ -42,12 +42,14 @@ public class GameLibrary {
         // Who is the author?
         // How many pages?
 
-        if (GameType.equalsIgnoreCase("T for Teen")) {
+        if (gameType.equalsIgnoreCase("Fps" )) {
             Person fps = new Person();
             while (true) {
-                String firstName = InputUtility.getString("What is the Fps's name?", in);
+                String firstName = InputUtility.getString("What is the Fps's main charactors first name?", in);
+                String lastName = InputUtility.getString("What is the Fps's main charactors last name?", in);
                 try {
                     fps.setFirstName(firstName);
+                    fps.setLastName(lastName);
                     break;
                 } catch (IllegalArgumentException e) {
                     System.out.println(e.getMessage());
@@ -55,26 +57,11 @@ public class GameLibrary {
             }
             // Prompt for Fps's last name
             // Set the Game's Fps
-            ((Fps) Game).setFps(fps);
+            ((Fps) game).setFps(fps);
         }
         
-        if (GameType.equalsIgnoreCase("M for Mature")) {
-            Person fps = new Person();
-            while (true) {
-                String firstName = InputUtility.getString("What is the Fps's name?", in);
-                try {
-                    fps.setFirstName(firstName);
-                    break;
-                } catch (IllegalArgumentException e) {
-                    System.out.println(e.getMessage());
-                }
-            }
-            // Prompt for Fps's last name
-            // Set the Game's Fps
-            ((Fps) Game).setFps(fps);
-        }
 
-        games[gameCount++] = Game;
+        games[gameCount++] = game;
         UIUtility.showMenuTitle("Game successfully added");
         // if the library is full, tell that to the user
     }
@@ -97,14 +84,14 @@ public class GameLibrary {
             System.out.println("Exiting update method");
             return;
         }
-        Game Game = games[choice - 1];
+        Game game = games[choice - 1];
         while (true) {
-            String title = InputUtility.getString("New title? [Press enter to keep '" + Game.getTitle() + "']", in);
+            String title = InputUtility.getString("New title? [Press enter to keep '" + game.getTitle() + "']", in);
             if (title.equals("")) {
-                title = Game.getTitle();
+                title = game.getTitle();
             }
             try {
-                Game.setTitle(title);
+                game.setTitle(title);
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
@@ -113,11 +100,11 @@ public class GameLibrary {
         // Ask to update the author's first name
         // Ask to update the author's last name
         // Ask to update the number of pages
-        if (Game instanceof Fps) {
+        if (game instanceof Fps) {
             // Ask to update the Fps's firstname
             // Ask to update the Fps's lastname
         }
-        games[choice - 1] = Game;
+        games[choice - 1] = game;
         UIUtility.showMenuTitle("Game successfully updated");
     }
 
@@ -133,11 +120,18 @@ public class GameLibrary {
             System.out.println("Exiting update method");
             return;
         }
-        Game Game = games[choice - 1];
+        Game game = games[choice - 1];
         int moveToIndex = InputUtility.getIntInRange("Where would you like to move this Game", 1, gameCount, in);
         moveToIndex--;
         // start a loop one spot higher than the choice, stop at the moveToIndex
         // Move the Game at the current index of the loop one spot to the left
         // When loop is finished, place the Game at the moveToIndex position.
     }
+
+    public void  sortGamesByTitle(Scanner in ){
+
+
+    }
+
+
 }

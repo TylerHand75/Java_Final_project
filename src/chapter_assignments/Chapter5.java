@@ -161,7 +161,7 @@ public class Chapter5 implements TaskHandler {
     public void exercise3(Scanner in) {
         UIUtility.showMenuTitle("Exercise 3 ");
 
-        String[] States = { "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
+        String[] states = { "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
                 "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas",
                 "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi",
                 "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York",
@@ -172,10 +172,9 @@ public class Chapter5 implements TaskHandler {
         String userinput1 = InputUtility.getString("Please Enter a letter", in);
         userinput1 = userinput1.toUpperCase();
         int count = 0;
-        for (String state : States) {
+        for (String state : states) {
             if (state.charAt(0)== userinput1.charAt(0)){
-                count++;
-                
+                count++; 
             }
         }
         System.out.println(count + " States that start with " + userinput1 );
@@ -184,15 +183,15 @@ public class Chapter5 implements TaskHandler {
 
     public void exercise4(Scanner in) {
         UIUtility.showMenuTitle("Exercise 4 ");
-       
-        String[] States = { "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
+
+        String[] states = { "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
                 "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas",
                 "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi",
                 "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York",
                 "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island",
                 "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington",
                 "West Virginia", "Wisconsin", "Wyoming" };
-        String[] Capitals = { "Montgomery", "Juneau", "Phoenix", "Little Rock", "Sacramento", "Denver", "Hartford",
+        String[] capitals = { "Montgomery", "Juneau", "Phoenix", "Little Rock", "Sacramento", "Denver", "Hartford",
                 "Dover", "Tallahassee", "Atlanta", "Honolulu", "Boise", "Springfield", "Indianapolis", "Des Moines",
                 "Topeka", "Frankfort", "Baton Rouge", "Augusta", "Annapolis", "Boston", "Lansing", "Saint Paul",
                 "Jackson", "Jefferson City", "Helena", "Lincoln", "Carson City", "Concord", "Trenton", "Santa Fe",
@@ -200,17 +199,14 @@ public class Chapter5 implements TaskHandler {
                 "Columbia", "Pierre", "Nashville", "Austin", "Salt Lake City", "Montpelier", "Richmond", "Olympia",
                 "Charleston", "Madison", "Cheyenne" };
 
-
-        for (int i = 0;i < 50;i++ ){
-            if(States[i].compareToIgnoreCase(Capitals[i]) < 0){
-                System.out.println(States[i] + " comes alphabetically before " + Capitals[i]);
-            }
-            else{
-                System.out.println(Capitals[i] + " comes alphabetically before " + States[i]);
+        for (int i = 0; i < 50; i++) {
+            if (states[i].compareToIgnoreCase(capitals[i]) < 0) {
+                System.out.println(states[i] + " comes alphabetically before " + capitals[i]);
+            } else {
+                System.out.println(capitals[i] + " comes alphabetically before " + states[i]);
             }
         }
 
-
     }
-   
+
 }
