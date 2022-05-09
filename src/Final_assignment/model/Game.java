@@ -5,21 +5,20 @@ import src.Final_assignment.model.Person;
 public class Game implements Comparable<Game> {
     private String title;
     private Person person;
-    private String fps;
-    private int numOfGames;
+    private int numOfGamesInSeries;
 
     public Game() {
         title = "Undefined";
-        fps = new String();
+        
         person = new Person();
-        numOfGames = 0;
+        numOfGamesInSeries = 0;
     }
 
-    public Game(String title, String fps, Person person, int numOfGames) {
+    public Game(String title, Person person, int numOfGamesInSeries) {
         setTitle(title);
-        setFps(fps);
+        
         setPerson(person);
-        setnumOfGames(numOfGames);
+        setNumOfGamesInSeries(numOfGamesInSeries);
     }
 
     public String getTitle() {
@@ -49,46 +48,33 @@ public class Game implements Comparable<Game> {
         }
     }
 
-    public String getFps() {
-        return fps;
+    
+
+    public int getNumOfGamesInSeries() {
+        return numOfGamesInSeries;
     }
 
-    public void setFps(String fps) {
-        validateFps(fps);
-        this.fps = fps;
+    public void setNumOfGamesInSeries(int numOfGamesInSeries) {
+        validateNumOfGamesInSeries(numOfGamesInSeries);
+        this.numOfGamesInSeries = numOfGamesInSeries;
     }
 
-    private void validateFps(String fps) {
-        if(fps == null) {
-            throw new IllegalArgumentException("Fps is required");
-        }
-    }
-
-    public int getNumOfGames() {
-        return numOfGames;
-    }
-
-    public void setnumOfGames(int numOfHoursToCompete) {
-        validatenumOfGames(numOfGames);
-        this.numOfGames = numOfGames;
-    }
-
-    private void validatenumOfGames(int numOfHoursToCompete) {
-        if(numOfHoursToCompete < 0) {
+    private void validateNumOfGamesInSeries(int numOfGamesInSeries) {
+        if(numOfGamesInSeries < 0) {
             throw new IllegalArgumentException("Number of Hours must be 0 or greater");
         }
     }
 
     @Override
     public String toString() {
-        return String.format("Title: %s%nFps: %s%nGameType and Publisher %s%n", title, fps,person);
+        return String.format("Title: %s%nFps: %s%nGameType and Publisher %s%n", title,person);
     }
 
     @Override
     public int compareTo(Game other) {
         int result = this.title.compareTo(other.title);
         if(result == 0) {
-            result = this.fps.compareTo(other.fps);
+            result = this.numOfGamesInSeries.compareTo(other.numOfGamesInSeries);
         }
         return 0;
     }

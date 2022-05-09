@@ -1,61 +1,61 @@
 package src.Final_assignment.model;
 
 public class Person implements Comparable<Person> {
-    private String firstName;
-    private String lastName;
+    private String genreType;
+    private String publisherName;
 
     public Person() {
-        firstName = "Undefined";
-        lastName = "Undefined";
+        genreType = "Undefined";
+        publisherName = "Undefined";
     }
 
-    public Person(String firstName, String lastName) {
-        setFirstName(firstName);
-        setLastName(lastName);
-        this.lastName = lastName;
+    public Person(String genreType, String publisherName) {
+        setGenreType(genreType);
+        setPublisherName(publisherName);
+        this.publisherName = publisherName;
     }
 
     public String getFirstName() {
-        return firstName;
+        return genreType;
     }
 
-    public void setFirstName(String firstName) {
-        validateFirstName(firstName);
-        this.firstName = firstName;
+    public void setGenreType(String genreType) {
+        validateGenreType(genreType);
+        this.genreType = genreType;
     }
 
-    private void validateFirstName(String firstName) {
-        if(firstName == null || firstName.equals("")) {
+    private void validateGenreType(String genreType) {
+        if(genreType == null || genreType.equals("")) {
             throw new IllegalArgumentException("First name is required");
         }
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getPublisherName() {
+        return publisherName;
     }
 
-    public void setLastName(String lastName) {
-        validateLastName(lastName);
-        this.lastName = lastName;
+    public void setPublisherName(String publisherName) {
+        validatePublisherName(publisherName);
+        this.publisherName = publisherName;
     }
 
-    private void validateLastName(String lastName) {
-        if(lastName == null || lastName.equals("")) {
+    private void validatePublisherName(String publisherName) {
+        if(publisherName == null || publisherName.equals("")) {
             throw new IllegalArgumentException("Last name is required");
         }
     }
 
     @Override
     public String toString() {
-        String result = String.format("%s %s", firstName, lastName);
+        String result = String.format("%s %s", genreType, publisherName);
         return result;
     }
 
     @Override
     public int compareTo(Person other) {
-        int result = this.lastName.compareTo(other.lastName);
+        int result = this.publisherName.compareTo(other.publisherName);
         if(result == 0) {
-            result = this.firstName.compareTo(other.firstName);
+            result = this.genreType.compareTo(other.genreType);
         }
         return result;
     }

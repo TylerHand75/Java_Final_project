@@ -14,8 +14,8 @@ public class GameLibrary {
 
     public GameLibrary() {
         games = new Game[20];
-        games[gameCount++] = new Game("Call of Duty 4 Modern Warfare", new String("Soap Mc Tavish"),new Person("fps", "Activision" ), 7 );
-        games[gameCount++] = new Game( "BattleFeild 2042", new String("USA"), new Person("Fps","EA "),7);
+        games[gameCount++] = new Game("Call of Duty 4 Modern Warfare", new Person("fps", "Activision" ), 7 );
+        games[gameCount++] = new Game( "BattleFeild 2042",  new Person("Fps","EA "),7);
         
     }
 
@@ -36,22 +36,48 @@ public class GameLibrary {
         if (gameType.equalsIgnoreCase("Regular")) {
             game = new Game();
         } else {
-            game = new Fps();
+            game = new EForEveryone();
         }
         while (true) {
             String title = InputUtility.getString("What is the title?", in);
-            String firstName = InputUtility.getString("What is the game types name?", in);
-            String lastName = InputUtility.getString("What is the publishers name?", in);
+            
             try {
                 
                 game.setTitle(title);
-                person.setFirstName(firstName);
-                person.setLastName(lastName);
+               
 
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
+            while (true) {
+                
+                String firstName = InputUtility.getString("What is the game types name?", in);
+                
+                try {
+                    
+                    
+                    person.setFirstName(firstName);
+                    
+    
+                    break;
+                } catch (IllegalArgumentException e) {
+                    System.out.println(e.getMessage());
+                }
+            
+                while (true) {
+                    
+                    String lastName = InputUtility.getString("What is the publishers name?", in);
+                    try {
+                        
+                        
+                        person.setLastName(lastName);
+        
+                        break;
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    
             
             
         }
@@ -112,13 +138,15 @@ public class GameLibrary {
                 System.out.println(e.getMessage());
             }
         }
-        // Ask to update the author's first name
-        // Ask to update the author's last name
-        // Ask to update the number of pages
-        if (game instanceof Fps) {
-            // Ask to update the Fps's firstname
-            // Ask to update the Fps's lastname
+       
+
+
+        if (game instanceof videogame) {
         }
+
+
+
+
         games[choice - 1] = game;
         UIUtility.showMenuTitle("Game successfully updated");
     }
