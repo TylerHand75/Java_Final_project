@@ -10,13 +10,16 @@ import src.utilities.UIUtility;
 public class GameLibrary {
     private Game[] games;
     private static int gameCount = 0;
-   
 
     public GameLibrary() {
-        games = new Game[20];
-        games[gameCount++] = new Game("Call of Duty 4 Modern Warfare", new Person("fps", "Activision" ), 7 );
-        games[gameCount++] = new Game( "BattleFeild 2042",  new Person("Fps","EA "),6);
-        
+        games = new Game[10];
+        games[gameCount++] = new Videogame2("Call of Duty 4 Modern Warfare", "fps", "Activision", 7, "M");
+        games[gameCount++] = new Videogame2("BattleFeild 2042", "Fps", "EA ", 6, "M");
+        games[gameCount++] = new Videogame2("Valheim","MMO","Coffee Stain Publishing",1,"T");
+        games[gameCount++] = new Game("Chess","stratigy","unknown",1);
+        games[gameCount++] = new Game("Texas Hold em", "Card game", "unknown",10);
+        games[gameCount++] = new Game("VolleyBall", "Sport","Red Chair Press",5 );
+
     }
 
     public boolean isFull() {
@@ -27,77 +30,72 @@ public class GameLibrary {
     public void addGame(Scanner in) {
         // Check if library is not full
         Game game;
-        Person person = new Person();
+
         String gameType = InputUtility.validateUserString("What type of Game would you like to add?",
                 new String[] { "Regular", "First Person Shooter" }, in);
-                
+
         if (gameType.equalsIgnoreCase("Regular")) {
             game = new Game();
         } else {
-            game = new Videogame();
+            game = new Videogame2();
         }
         while (true) {
             String title = InputUtility.getString("What is the title?", in);
-            
+
             try {
-                
+
                 game.setTitle(title);
-               
 
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
             while (true) {
-                
+                Publisher publisher = new Publisher();
                 String genreType = InputUtility.getString("What is the Genre type?", in);
-                
+
                 try {
-                    
-                    person.setGenreType(genreType);
-                    
-    
+
+                    publisher.setGenreType(genreType);
+
                     break;
                 } catch (IllegalArgumentException e) {
                     System.out.println(e.getMessage());
                 }
-            
+
                 while (true) {
-                    
+
                     String publisherName = InputUtility.getString("What is the publishers name?", in);
                     try {
-                        
-                        
-                        person.setPublisherName(publisherName);
-        
+
+                        publisher.setPublisherName(publisherName);
+
                         break;
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }
-                    
-            
-            
+                }
+            }
+
         }
-        
-        
-        if (gameType.equalsIgnoreCase("Rating" )) {
-            String rating1 = new String();
+
+        if (gameType.equalsIgnoreCase("Rating")) {
+            String rating = " ";
             while (true) {
-                String rating2 = InputUtility.getString("What is the Rating for this Game?", in);
-                
+                rating = InputUtility.getString("What is the Rating for this Game?", in);
+
                 try {
-                    rating1.setRating(rating2);
-                    
-                    break;;
+                    ((Videogame2) game).setRating(rating);
+                    break;
+
                 } catch (IllegalArgumentException e) {
                     System.out.println(e.getMessage());
                 }
             }
-            
+
             // Set the Game's Rating
-            ((Videogame) game).setRating(rating1);
+            ((Videogame2) game).setRating(rating);
         }
-        
 
         games[gameCount++] = game;
         UIUtility.showMenuTitle("Game successfully added");
@@ -135,13 +133,6 @@ public class GameLibrary {
                 System.out.println(e.getMessage());
             }
         }
-       
-
-
-        
-
-
-
 
         games[choice - 1] = game;
         UIUtility.showMenuTitle("Game successfully updated");
@@ -166,8 +157,5 @@ public class GameLibrary {
         // Move the Game at the current index of the loop one spot to the left
         // When loop is finished, place the Game at the moveToIndex position.
     }
-
-    
-
 
 }

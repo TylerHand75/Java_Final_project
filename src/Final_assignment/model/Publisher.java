@@ -1,21 +1,21 @@
 package src.Final_assignment.model;
 
-public class Person implements Comparable<Person> {
+public class Publisher implements Comparable<Publisher> {
     private String genreType;
     private String publisherName;
 
-    public Person() {
+    public Publisher() {
         genreType = "Undefined";
         publisherName = "Undefined";
     }
 
-    public Person(String genreType, String publisherName) {
+    public Publisher(String genreType, String publisherName) {
         setGenreType(genreType);
         setPublisherName(publisherName);
         this.publisherName = publisherName;
     }
 
-    public String getFirstName() {
+    public String getGenreType() {
         return genreType;
     }
 
@@ -52,7 +52,7 @@ public class Person implements Comparable<Person> {
     }
 
     @Override
-    public int compareTo(Person other) {
+    public int compareTo(Publisher other) {
         int result = this.publisherName.compareTo(other.publisherName);
         if(result == 0) {
             result = this.genreType.compareTo(other.genreType);

@@ -1,21 +1,23 @@
 package src.Final_assignment.model;
 
-import src.Final_assignment.model.Person;
+import src.Final_assignment.model.Publisher;
 
 public class Game implements Comparable<Game> {
     private String title;
+    private String genreType;
     private String publisher;
     private int numOfGamesInSeries;
 
     public Game() {
         title = "Undefined";
-        
+        genreType = "undefined";
         publisher = "Undefined";
         numOfGamesInSeries = 0;
     }
 
-    public Game(String title, String publisher, int numOfGamesInSeries) {
+    public Game(String title, String genreType, String publisher, int numOfGamesInSeries) {
         setTitle(title);
+        setGenreType(genreType);
         setPublisher(publisher);
         setNumOfGamesInSeries(numOfGamesInSeries);
     }
@@ -34,16 +36,33 @@ public class Game implements Comparable<Game> {
             throw new IllegalArgumentException("The Game title is required.");
         }
     }
-    public Person getPublisher(){
+
+
+    public String getPublisher(){
         return publisher;
     }
-    public void setPublisher(Person publisher){
+    public void setPublisher(String publisher){
         validatePublisher(publisher);
         this.publisher = publisher;
     }
-    private void validatePublisher(Person person){
-        if(person == null || person.equals("")) {
+    private void validatePublisher(String publisher){
+        if(publisher == null || publisher.equals("")) {
             throw new IllegalArgumentException("The Game type and publisher is required.");
+        }
+    }
+
+    public String getGenreType() {
+        return genreType;
+    }
+
+    public void setGenreType(String genreType) {
+        validateGenreType(genreType);
+        this.genreType = genreType;
+    }
+
+    private void validateGenreType(String genreType) {
+        if(genreType == null || genreType.equals("")) {
+            throw new IllegalArgumentException("Genre is required");
         }
     }
 
@@ -66,7 +85,7 @@ public class Game implements Comparable<Game> {
 
     @Override
     public String toString() {
-        return String.format("Title: %s%nRating: %s%nGameType and Publisher %s%n", title,publisher);
+        return String.format("Title: %s  \nGame Type: %s \nPublisher: %s\nNum Of Game in series: %d", title, genreType, publisher, numOfGamesInSeries);
     }
 
     @Override
