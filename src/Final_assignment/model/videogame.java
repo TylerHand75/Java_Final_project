@@ -26,4 +26,8 @@ public class Videogame extends Game {
             throw new IllegalArgumentException("Rating is required. Must be E, E10+, T or M ");
         }
     }
+    @Override
+    public String toString() {
+        return String.format("Title: %s%nRating: %s%nGameType and Publisher %s%n", title,person);
+    }
 }

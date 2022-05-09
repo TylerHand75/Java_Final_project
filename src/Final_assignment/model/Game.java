@@ -4,19 +4,19 @@ import src.Final_assignment.model.Person;
 
 public class Game implements Comparable<Game> {
     private String title;
-    private Person person;
+    private String publisher;
     private int numOfGamesInSeries;
 
     public Game() {
         title = "Undefined";
         
-        person = new Person();
+        publisher = "Undefined";
         numOfGamesInSeries = 0;
     }
 
-    public Game(String title, Person person, int numOfGamesInSeries) {
+    public Game(String title, String publisher, int numOfGamesInSeries) {
         setTitle(title);
-        setPerson(person);
+        setPublisher(publisher);
         setNumOfGamesInSeries(numOfGamesInSeries);
     }
 
@@ -34,14 +34,14 @@ public class Game implements Comparable<Game> {
             throw new IllegalArgumentException("The Game title is required.");
         }
     }
-    public Person getPerson(){
-        return person;
+    public Person getPublisher(){
+        return publisher;
     }
-    public void setPerson(Person person){
-        validatePerson(person);
-        this.person = person;
+    public void setPublisher(Person publisher){
+        validatePublisher(publisher);
+        this.publisher = publisher;
     }
-    private void validatePerson(Person person){
+    private void validatePublisher(Person person){
         if(person == null || person.equals("")) {
             throw new IllegalArgumentException("The Game type and publisher is required.");
         }
@@ -66,14 +66,14 @@ public class Game implements Comparable<Game> {
 
     @Override
     public String toString() {
-        return String.format("Title: %s%nRating: %s%nGameType and Publisher %s%n", title,person);
+        return String.format("Title: %s%nRating: %s%nGameType and Publisher %s%n", title,publisher);
     }
 
     @Override
     public int compareTo(Game other) {
         int result = this.title.compareTo(other.title);
         if(result == 0) {
-            result = this.numOfGamesInSeries.compareTo(other.numOfGamesInSeries);
+            result = this.numOfGamesInSeries - other.numOfGamesInSeries;
         }
         return 0;
     }
