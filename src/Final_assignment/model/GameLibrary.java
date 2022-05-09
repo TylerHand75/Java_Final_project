@@ -15,7 +15,7 @@ public class GameLibrary {
     public GameLibrary() {
         games = new Game[20];
         games[gameCount++] = new Game("Call of Duty 4 Modern Warfare", new Person("fps", "Activision" ), 7 );
-        games[gameCount++] = new Game( "BattleFeild 2042",  new Person("Fps","EA "),7);
+        games[gameCount++] = new Game( "BattleFeild 2042",  new Person("Fps","EA "),6);
         
     }
 
@@ -28,15 +28,13 @@ public class GameLibrary {
         // Check if library is not full
         Game game;
         Person person = new Person();
-        
-        
         String gameType = InputUtility.validateUserString("What type of Game would you like to add?",
                 new String[] { "Regular", "First Person Shooter" }, in);
                 
         if (gameType.equalsIgnoreCase("Regular")) {
             game = new Game();
         } else {
-            game = new Fps();
+            game = new Videogame();
         }
         while (true) {
             String title = InputUtility.getString("What is the title?", in);
@@ -55,7 +53,6 @@ public class GameLibrary {
                 String genreType = InputUtility.getString("What is the Genre type?", in);
                 
                 try {
-                    
                     
                     person.setGenreType(genreType);
                     
@@ -83,22 +80,22 @@ public class GameLibrary {
         }
         
         
-        if (gameType.equalsIgnoreCase("Fps" )) {
-            String rating = new String();
+        if (gameType.equalsIgnoreCase("Rating" )) {
+            String rating1 = new String();
             while (true) {
-                String rating = InputUtility.getString("What is the Rating for this Game?", in);
+                String rating2 = InputUtility.getString("What is the Rating for this Game?", in);
                 
                 try {
-                    rating.setFps(genreType);
+                    rating1.setRating(rating2);
                     
                     break;;
                 } catch (IllegalArgumentException e) {
                     System.out.println(e.getMessage());
                 }
             }
-            // Prompt for Fps's last name
-            // Set the Game's Fps
-            ((Fps) game).setFps(fps);
+            
+            // Set the Game's Rating
+            ((Videogame) game).setRating(rating1);
         }
         
 

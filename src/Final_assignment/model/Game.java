@@ -16,7 +16,6 @@ public class Game implements Comparable<Game> {
 
     public Game(String title, Person person, int numOfGamesInSeries) {
         setTitle(title);
-        
         setPerson(person);
         setNumOfGamesInSeries(numOfGamesInSeries);
     }
@@ -61,13 +60,13 @@ public class Game implements Comparable<Game> {
 
     private void validateNumOfGamesInSeries(int numOfGamesInSeries) {
         if(numOfGamesInSeries < 0) {
-            throw new IllegalArgumentException("Number of Hours must be 0 or greater");
+            throw new IllegalArgumentException("Number of Games in a series must be 0 or greater");
         }
     }
 
     @Override
     public String toString() {
-        return String.format("Title: %s%nFps: %s%nGameType and Publisher %s%n", title,person);
+        return String.format("Title: %s%nRating: %s%nGameType and Publisher %s%n", title,person);
     }
 
     @Override

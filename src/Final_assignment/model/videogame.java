@@ -2,7 +2,16 @@ package src.Final_assignment.model;
 
 public class Videogame extends Game {
     public String rating;
-     
+
+    public Videogame(){
+        super();
+        rating = new String();
+    }
+    public Videogame(String title, String rating, Person person, int numOfGamesInSeries){
+        super(title, person, numOfGamesInSeries);
+        setRating(rating);
+    }
+    
     public String getRaing() {
         return rating;
     }
@@ -17,6 +26,4 @@ public class Videogame extends Game {
             throw new IllegalArgumentException("Rating is required. Must be E, E10+, T or M ");
         }
     }
-
-
 }
