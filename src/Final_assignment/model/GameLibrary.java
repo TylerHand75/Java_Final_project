@@ -36,7 +36,7 @@ public class GameLibrary {
         if (gameType.equalsIgnoreCase("Regular")) {
             game = new Game();
         } else {
-            game = new EForEveryone();
+            game = new Fps();
         }
         while (true) {
             String title = InputUtility.getString("What is the title?", in);
