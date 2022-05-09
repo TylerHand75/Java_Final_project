@@ -52,12 +52,12 @@ public class GameLibrary {
             }
             while (true) {
                 
-                String firstName = InputUtility.getString("What is the game types name?", in);
+                String genreType = InputUtility.getString("What is the Genre type?", in);
                 
                 try {
                     
                     
-                    person.setFirstName(firstName);
+                    person.setGenreType(genreType);
                     
     
                     break;
@@ -67,11 +67,11 @@ public class GameLibrary {
             
                 while (true) {
                     
-                    String lastName = InputUtility.getString("What is the publishers name?", in);
+                    String publisherName = InputUtility.getString("What is the publishers name?", in);
                     try {
                         
                         
-                        person.setLastName(lastName);
+                        person.setPublisherName(publisherName);
         
                         break;
                     } catch (IllegalArgumentException e) {
@@ -84,12 +84,12 @@ public class GameLibrary {
         
         
         if (gameType.equalsIgnoreCase("Fps" )) {
-            String fps = new String();
+            String rating = new String();
             while (true) {
-                String firstName = InputUtility.getString("What is the Fps's main charactors first name?", in);
+                String rating = InputUtility.getString("What is the Rating for this Game?", in);
                 
                 try {
-                    fps.setFps(firstName);
+                    rating.setFps(genreType);
                     
                     break;;
                 } catch (IllegalArgumentException e) {
@@ -141,8 +141,7 @@ public class GameLibrary {
        
 
 
-        if (game instanceof videogame) {
-        }
+        
 
 
 

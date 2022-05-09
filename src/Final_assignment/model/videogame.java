@@ -1,19 +1,19 @@
 package src.Final_assignment.model;
 
-public class videogame extends Game {
+public class Videogame extends Game {
     public String rating;
      
     public String getEForEveryone() {
-        return rating;
+        return eForEveryone;
     }
 
     public void setEForEveryone(String eForEveryone) {
-        validateEForEveryone(rating);
-        this.rating = rating;
+        validateEForEveryone(eForEveryone);
+        this.eForEveryone = eForEveryone;
     }
 
     private void validateEForEveryone(String eForEveryone) {
-        if(rating == null || rating.equals("")) {
+        if(eForEveryone == null || eForEveryone.equals("")) {
             throw new IllegalArgumentException("E for Everyone is required");
         }
     } 
@@ -21,30 +21,30 @@ public class videogame extends Game {
 
     
     public String getE10() {
-        return rating;
+        return e10;
     }
 
     public void setE10(String e10) {
-        validateE10(rating);
-        this.rating = rating;
+        validateE10(e10);
+        this.e10 = e10;
     }
 
     private void validateE10(String e10) {
-        if(rating == null || rating.equals("")) {
-            throw new IllegalArgumentException("E for Everyone is required");
+        if(e10 == null || e10.equals("")) {
+            throw new IllegalArgumentException("E 10+ is required");
         }
     }
     public String getTForTeen() {
-        return rating;
+        return tForTeen;
     }
 
     public void setTForTeen(String tForTeen) {
-        validateTForTeen(rating);
-        this.rating = rating;
+        validateTForTeen(tForTeen);
+        this.tForTeen = tForTeen;
     }
 
     private void validateTForTeen(String tForTeen) {
-        if(rating == null || rating.equals("")) {
+        if(tForTeen == null || tForTeen.equals("")) {
             throw new IllegalArgumentException("T for Teen is required");
         }
     }
@@ -55,13 +55,13 @@ public class videogame extends Game {
     }
 
     public void setMForMature(String mForMature) {
-        validateMForMature(rating);
-        this.rating = rating;
+        validateMForMature(mForMature);
+        this.mForMature = mForMature;
     }
 
     private void validateMForMature(String mForMature) {
-        if(rating == null || rating.equals("")) {
-            throw new IllegalArgumentException("E for Everyone is required");
+        if(mForMature == null || mForMature.equals("")) {
+            throw new IllegalArgumentException("M for Mature is required");
         }
     }
 
