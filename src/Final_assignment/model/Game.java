@@ -5,16 +5,17 @@ import src.Final_assignment.model.Person;
 public class Game implements Comparable<Game> {
     private String title;
     private Person person;
-    private Person fps;
+    private String fps;
     private int numOfGames;
 
     public Game() {
         title = "Undefined";
-        fps = new Person();
+        fps = new String();
+        person = new Person();
         numOfGames = 0;
     }
 
-    public Game(String title, Person fps, Person person, int numOfGames) {
+    public Game(String title, String fps, Person person, int numOfGames) {
         setTitle(title);
         setFps(fps);
         setPerson(person);
@@ -35,29 +36,29 @@ public class Game implements Comparable<Game> {
             throw new IllegalArgumentException("The Game title is required.");
         }
     }
-    public String getPerson(){
-        return person.toString();
+    public Person getPerson(){
+        return person;
     }
-    public void setPerson(String person){
+    public void setPerson(Person person){
         validatePerson(person);
         this.person = person;
     }
-    private void validatePerson(String person){
+    private void validatePerson(Person person){
         if(person == null || person.equals("")) {
             throw new IllegalArgumentException("The Game type and publisher is required.");
         }
     }
 
-    public Person getFps() {
+    public String getFps() {
         return fps;
     }
 
-    public void setFps(Person fps) {
+    public void setFps(String fps) {
         validateFps(fps);
         this.fps = fps;
     }
 
-    private void validateFps(Person fps) {
+    private void validateFps(String fps) {
         if(fps == null) {
             throw new IllegalArgumentException("Fps is required");
         }
@@ -80,7 +81,7 @@ public class Game implements Comparable<Game> {
 
     @Override
     public String toString() {
-        return String.format("Title: %s%nFps: %s%n", title, fps);
+        return String.format("Title: %s%nFps: %s%nGameType and Publisher %s%n", title, fps,person);
     }
 
     @Override

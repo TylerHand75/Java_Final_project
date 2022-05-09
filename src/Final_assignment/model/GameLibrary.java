@@ -2,6 +2,8 @@ package src.Final_assignment.model;
 
 import java.util.Scanner;
 
+import javax.print.DocFlavor.STRING;
+
 import src.utilities.InputUtility;
 import src.utilities.UIUtility;
 
@@ -12,8 +14,8 @@ public class GameLibrary {
 
     public GameLibrary() {
         games = new Game[20];
-        games[gameCount++] = new Game("Call of Duty 4 Modern Warfare", new Person("John", "Price"),null, 7 );
-        games[gameCount++] = new Game();
+        games[gameCount++] = new Game("Call of Duty 4 Modern Warfare", new String("Soap Mc Tavish"),new Person("fps", "Activision" ), 7 );
+        games[gameCount++] = new Game( "BattleFeild 2042", new String("USA"), new Person("Fps","EA "),7);
         
     }
 
@@ -26,6 +28,7 @@ public class GameLibrary {
         // Check if library is not full
         Game game;
         Person person = new Person();
+        
         
         String gameType = InputUtility.validateUserString("What type of Game would you like to add?",
                 new String[] { "Regular", "First Person Shooter" }, in);
@@ -50,19 +53,19 @@ public class GameLibrary {
                 System.out.println(e.getMessage());
             }
             
+            
         }
-        // Who is the author?
-        // How many pages?
-
+        
+        
         if (gameType.equalsIgnoreCase("Fps" )) {
-            Person fps = new Person();
+            String fps = new String();
             while (true) {
                 String firstName = InputUtility.getString("What is the Fps's main charactors first name?", in);
-                String lastName = InputUtility.getString("What is the Fps's main charactors last name?", in);
+                
                 try {
-                    fps.setFirstName(firstName);
-                    fps.setLastName(lastName);
-                    break;
+                    fps.setFps(firstName);
+                    
+                    break;;
                 } catch (IllegalArgumentException e) {
                     System.out.println(e.getMessage());
                 }
@@ -140,10 +143,7 @@ public class GameLibrary {
         // When loop is finished, place the Game at the moveToIndex position.
     }
 
-    public void  sortGamesByTitle(Scanner in ){
-        
-
-    }
+    
 
 
 }

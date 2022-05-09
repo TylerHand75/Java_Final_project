@@ -1,28 +1,28 @@
 package src.Final_assignment.model;
 
 public class Fps extends Game {
-    private Person fps;
+    private String fps;
 
     public Fps() {
         super();
-        fps = new Person();
+        fps = new String();
     }
 
-    public Fps(String title, Person fps, Person person, int numOfGames) {
+    public Fps(String title, String fps, Person person, int numOfGames) {
         super(title, fps, person, numOfGames );
         setFps(fps);
     }
 
-    public Person getFps() {
-        return fps;
+    public String getFps() {
+        return fps.toString();
     }
 
-    public void setFps(Person fps) {
+    public void setFps(String fps) {
         validateFps(fps);
         this.fps = fps;
     }
 
-    private void validateFps(Person fps) {
+    private void validateFps(String fps) {
         if(fps == null) {
             throw new IllegalArgumentException("Fps is required");
         }
